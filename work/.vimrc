@@ -1,6 +1,5 @@
 :set nocompatible
-:colorscheme vividchalk
-":colorscheme ir_black
+:colorscheme diablo3
 :set hidden
 :set textwidth=160
 :set tabstop=4
