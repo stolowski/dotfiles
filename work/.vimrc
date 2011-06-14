@@ -15,8 +15,9 @@
 :set incsearch
 :set cindent
 :set wildmenu
-:set guioptions=aegimtT
+:set guioptions=amgic
 :set complete-=i
+:set number
 :set path=.,~/adtech/build/**,/usr/include,,
 :hi CursorLine ctermbg=darkgrey ctermfg=white guibg=grey37 guifg=white
 " :set cursorline
@@ -48,6 +49,8 @@ nmap \t :FufTag<CR>
 nmap \f :FufFile<CR>
 nmap \F :FufCoverageFile<CR>
 nmap \b :FufBuffer<CR>
+
+nmap <F1> <ESC>:Bstoc<CR>
 
 :imap <F2> <ESC>:update<CR>
 :imap <F3> <ESC>:BufExplorer<CR>
