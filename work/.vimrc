@@ -63,7 +63,7 @@ nmap <F1> <ESC>:Bstoc<CR>
 :map <F2> :update<CR>
 :map <F5> :cprev<CR>
 :map <F6> :cnext<CR>
-:map <F7> :copen<CR>
+:map <F7> :botright cwindow<CR>
 :map <F8> :colder<CR>
 :map <F9> :cnewer<CR>
 
