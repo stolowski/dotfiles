@@ -17,9 +17,11 @@
 :set wildmenu
 :set guioptions=amgic
 :set complete-=i
+:set omnifunc=syntaxcomplete#Complete
 :set number
 :set path=.,~/adtech/build/**,/usr/include,,
 :hi CursorLine ctermbg=darkgrey ctermfg=white guibg=grey37 guifg=white
+:set guifont=Droid\ Sans\ Mono\ 10
 " :set cursorline
 :set tags=./tags.tags,/home/pawel/adtech/build/tags
 let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '^\.']
@@ -35,6 +37,9 @@ endif
 
 " otwieranie wynikow cscope w oknie quickfix
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+command UpdateHelp helptags ~/.vim/doc
+command VimRc edit ~/.vimrc
 
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
