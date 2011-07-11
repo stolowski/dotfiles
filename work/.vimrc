@@ -37,6 +37,7 @@ endif
 
 " otwieranie wynikow cscope w oknie quickfix
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
+:set cscopetag
 
 command UpdateHelp helptags ~/.vim/doc
 command VimRc edit ~/.vimrc
