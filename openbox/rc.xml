@@ -52,7 +52,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>sans</name>
@@ -112,10 +112,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-    <name>Desktop 1</name>
-    <name>Desktop 2</name>
-    <name>Desktop 3</name>
-    <name>Dekstop 4</name>
+      <name>Desktop 1</name>
+      <name>Desktop 2</name>
+      <name>Desktop 3</name>
+      <name>Desktop 4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -268,10 +268,10 @@
     <keybind key="W-w">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="W-f">
+    <keybind key="W-S-f">
       <action name="ToggleFullscreen"/>
     </keybind>
-    <keybind key="W-S-f">
+    <keybind key="W-f">
       <action name="ToggleMaximizeFull"/>
     </keybind>
     <keybind key="W-m">
@@ -674,6 +674,11 @@
   <!-- show the manage desktops section in the client-list-(combined-)menu -->
 </menu>
   <applications>
+
+  <application name="xfce4-terminal">
+      <maximized>true</maximized>
+  </application>
+
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
