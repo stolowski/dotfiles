@@ -287,10 +287,15 @@
         <execute>gnome-screenshot -w</execute>
       </action>
     </keybind>
-    <keybind key="W-space">
+    <keybind key="W-A-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
+    </keybind>
+    <keybind key="W-space">
+        <action name="ShowMenu">
+          <menu>client-list-combined-menu</menu>
+        </action>
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
