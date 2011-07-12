@@ -310,6 +310,17 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <keybind key="C-S-Up">
+      <action name="Execute">
+		  <execute>sudo /usr/local/sbin/samsung_backlight up</execute>
+      </action>
+	  </keybind>
+	  <keybind key="C-S-Down">
+      <action name="Execute">
+		  <execute>sudo /usr/local/sbin/samsung_backlight down</execute>
+      </action>
+    </keybind>
+    
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
