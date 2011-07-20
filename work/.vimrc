@@ -23,7 +23,7 @@
 :hi CursorLine ctermbg=darkgrey ctermfg=white guibg=grey37 guifg=white
 :set guifont=Droid\ Sans\ Mono\ 10
 " :set cursorline
-:set tags=./tags.tags,/home/pawel/adtech/build/tags
+:set tags=tags
 let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '^\.']
 let NERDTreeWinPos="right"
 
@@ -37,7 +37,6 @@ endif
 
 " otwieranie wynikow cscope w oknie quickfix
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
-:set cscopetag
 
 command UpdateHelp helptags ~/.vim/doc
 command VimRc edit ~/.vimrc
