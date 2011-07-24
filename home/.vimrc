@@ -24,8 +24,7 @@ set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\
 set fillchars=fold:\ 
 " hi Folded ctermbg=black ctermfg=green
 " hi FoldColumn ctermbg=black ctermfg=green
-colorscheme ir_black
-"colorscheme baycomb
+colorscheme diablo3
 
 "
 " menu
@@ -134,6 +133,12 @@ nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+set grepprg=ack-grep\ --cpp\ --cc\ --perl\ --python\ --make 
+"
+" grep word under cursor
+:nmap _g :grep <C-R>=expand("<cword>")<CR><CR>
+:nmap _a :grepadd <C-R>=expand("<cword>")<CR><CR>
 
 "
 " plugin win_full_screen
