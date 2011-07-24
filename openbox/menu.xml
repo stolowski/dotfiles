@@ -10,7 +10,7 @@
     <action name="Execute"><execute>xfce4-terminal</execute></action>
   </item>
   <item label="Web browser">
-    <action name="Execute"><execute>firefox</execute></action>
+    <action name="Execute"><execute>google-chrome</execute></action>
   </item>
   <item label="File manager">
     <action name="Execute"><execute>thunar</execute></action>
@@ -18,10 +18,26 @@
   <item label="Vim">
     <action name="Execute"><execute>gvim</execute></action>
   </item>
-  <separator />
-  <item label="Deadbeef">
-    <action name="Execute"><execute>deadbeef</execute></action>
+	
+  <item label="Leafpad">
+    <action name="Execute"><execute>leafpad</execute></action>
   </item>
+ 
+  <separator />
+  <menu id="mmedia-menu" label="Multimedia">
+	  <item label="Volume control">
+		  <action name="Execute"><execute>pavucontrol</execute></action>
+	  </item>
+	  <item label="Deadbeef">
+		  <action name="Execute"><execute>deadbeef</execute></action>
+	  </item>
+	  <item label="VLC">
+		  <action name="Execute"><execute>vlc</execute></action>
+	  </item>
+	  <item label="SMPlayer">
+		  <action name="Execute"><execute>smplayer</execute></action>
+	  </item>
+  </menu>
   <separator />
   <menu id="config-menu" label="Config">
       <item label="ObConf">
