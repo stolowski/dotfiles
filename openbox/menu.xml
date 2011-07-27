@@ -39,6 +39,16 @@
 	  </item>
   </menu>
   <separator />
+
+  <menu id="config-keyboard" label="Keyboard">
+      <item label="GB">
+		  <action name="Execute"><execute>setxkbmap -layout gb</execute></action>
+      </item>
+      <item label="PL">
+		  <action name="Execute"><execute>setxkbmap -layout pl</execute></action>
+      </item>
+  </menu>
+
   <menu id="config-menu" label="Config">
       <item label="ObConf">
         <action name="Execute"><execute>obconf</execute></action>
