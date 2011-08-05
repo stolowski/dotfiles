@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#
+# set GIT_BRANCH var to git branch of current dir
+function git_branch {
+    GIT_BRANCH=$(git branch 2>/dev/null | sed -e '/^  /d;s/* //');
+}
+
+#
+# output git branch name decorated with :branch:, or empty string if not in a git workdir
+function git_branch_d {
+    git_branch
+    [ -n "$GIT_BRANCH" ] && echo ":$GIT_BRANCH:"
+}
+
+#
+# changes directory and ls it
+function cl {
+    cd "$1" && ls
+}
+
+shopt -s cdspell dirspell
+set -o vi
+set completion-ignore-case on
+
+if [ "$TERM" == "xterm" ]
+then
+    XTERM_TITLE='\[\e]0;$(basename $PWD)\a\]';
+fi
+PS1="$XTERM_TITLE"'\[\e[1;32m\][\w$(git_branch_d)]\$\[\e[0m\] '
+
+export EDITOR=vim
+export VISUAL=vim
