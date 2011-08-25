@@ -28,11 +28,15 @@
 	  <item label="Volume control">
 		  <action name="Execute"><execute>pavucontrol</execute></action>
 	  </item>
+	  <separator />
 	  <item label="Deadbeef">
 		  <action name="Execute"><execute>deadbeef</execute></action>
 	  </item>
 	  <item label="VLC">
 		  <action name="Execute"><execute>vlc</execute></action>
+	  </item>
+	  <item label="UMPlayer">
+		  <action name="Execute"><execute>umplayer</execute></action>
 	  </item>
 	  <item label="SMPlayer">
 		  <action name="Execute"><execute>smplayer</execute></action>
@@ -47,6 +51,21 @@
       <item label="PL">
 		  <action name="Execute"><execute>setxkbmap -layout pl</execute></action>
       </item>
+  </menu>
+
+  <menu id="config-screensaver" label="Screensaver">
+	  <item label="Disable">
+		  <action name="Execute"><execute>xscreensaver-command -exit</execute></action>
+	  </item>
+	  <item label="Enable">
+		  <action name="Execute"><execute>xscreensaver -no-splash</execute></action>
+	  </item>
+	  <item label="Activate">
+		  <action name="Execute"><execute>xscreensaver-command -activate</execute></action>
+	  </item>
+	  <item label="Prefs">
+		  <action name="Execute"><execute>xscreensaver-command -prefs</execute></action>
+	  </item>
   </menu>
 
   <menu id="config-menu" label="Config">
