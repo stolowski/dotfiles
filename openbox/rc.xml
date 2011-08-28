@@ -73,21 +73,21 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
-      <size>9</size>
+      <name>Sans</name>
+      <size>8</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
-      <size>9</size>
+      <name>Sans</name>
+      <size>8</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="OnScreenDisplay">
@@ -293,9 +293,9 @@
       </action>
     </keybind>
     <keybind key="W-space">
-        <action name="ShowMenu">
-          <menu>client-list-combined-menu</menu>
-        </action>
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
+      </action>
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
@@ -312,15 +312,14 @@
     </keybind>
     <keybind key="C-S-Up">
       <action name="Execute">
-		  <execute>sudo /usr/local/sbin/samsung_backlight up</execute>
-      </action>
-	  </keybind>
-	  <keybind key="C-S-Down">
-      <action name="Execute">
-		  <execute>sudo /usr/local/sbin/samsung_backlight down</execute>
+        <execute>sudo /usr/local/sbin/samsung_backlight up</execute>
       </action>
     </keybind>
-    
+    <keybind key="C-S-Down">
+      <action name="Execute">
+        <execute>sudo /usr/local/sbin/samsung_backlight down</execute>
+      </action>
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
@@ -330,6 +329,11 @@
     <keybind key="W-t">
       <action name="Execute">
         <execute>xfce4-terminal</execute>
+      </action>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Execute">
+        <execute>google-chrome</execute>
       </action>
     </keybind>
     <keybind key="C-A-l">
@@ -690,7 +694,6 @@
   <!-- show the manage desktops section in the client-list-(combined-)menu -->
 </menu>
   <applications>
-
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
