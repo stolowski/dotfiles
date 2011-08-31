@@ -24,6 +24,10 @@
     <action name="Execute"><execute>leafpad</execute></action>
   </item>
  
+  <item label="Skype">
+    <action name="Execute"><execute>skype</execute></action>
+  </item>
+
   <separator />
   <menu id="mmedia-menu" label="Multimedia">
 	  <item label="Volume control">
