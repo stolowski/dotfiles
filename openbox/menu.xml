@@ -46,6 +46,9 @@
 	  <item label="SMPlayer">
 		  <action name="Execute"><execute>smplayer</execute></action>
 	  </item>
+	  <item label="SubDownloader">
+		  <action name="Execute"><execute>subdownloader</execute></action>
+	  </item>
   </menu>
   <separator />
 
