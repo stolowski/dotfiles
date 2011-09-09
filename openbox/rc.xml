@@ -773,5 +773,17 @@
 
   # end of the example
 -->
+	<application name="evince" class="Evince">
+		<fullscreen>yes</fullscreen>
+		<focus>yes</focus>
+		<decor>no</decor>
+	</application>
+
+	<application name="xfce4-terminal" class="Xfce4-terminal">
+		<fullscreen>yes</fullscreen>
+		<focus>yes</focus>
+		<decor>no</decor>
+	</application>
+
   </applications>
 </openbox_config>
