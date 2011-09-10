@@ -330,7 +330,12 @@
       <action name="Execute">
         <execute>xfce4-terminal</execute>
       </action>
-    </keybind>
+   </keybind>
+   <keybind key="W-s">
+      <action name="Execute">
+        <execute>pavucontrol</execute>
+      </action>
+  </keybind>
     <keybind key="W-q">
       <action name="Execute">
         <execute>google-chrome</execute>
