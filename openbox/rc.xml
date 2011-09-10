@@ -774,13 +774,19 @@
   # end of the example
 -->
 	<application name="evince" class="Evince">
-		<fullscreen>yes</fullscreen>
+		<maximized>true</maximized>
 		<focus>yes</focus>
 		<decor>no</decor>
 	</application>
 
 	<application name="xfce4-terminal" class="Xfce4-terminal">
-		<fullscreen>yes</fullscreen>
+		<maximized>true</maximized>
+		<focus>yes</focus>
+		<decor>no</decor>
+	</application>
+
+	<application name="firefox-bin" class="Firefox-bin" type="normal" role="browser">
+		<maximized>true</maximized>
 		<focus>yes</focus>
 		<decor>no</decor>
 	</application>
