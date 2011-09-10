@@ -10,7 +10,10 @@
     <action name="Execute"><execute>xfce4-terminal</execute></action>
   </item>
   <separator />
-  <item label="Web browser">
+  <item label="Firefox">
+    <action name="Execute"><execute>firefox</execute></action>
+  </item>
+  <item label="Chrome">
     <action name="Execute"><execute>google-chrome</execute></action>
   </item>
   <item label="File manager">
