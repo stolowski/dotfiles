@@ -321,17 +321,17 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
+    <keybind key="W-e">
+        <action name="Execute">
+            <execute>thunar</execute>
+        </action>
+    </keybind>
+    <keybind key="W-t">
+        <action name="Execute">
+            <execute>xfce4-terminal</execute>
+        </action>
+    </keybind>
 	<keybind key="W-a"> <!-- prefix key for running aps -->
-		<keybind key="e">
-		  <action name="Execute">
-			<execute>thunar</execute>
-		  </action>
-		</keybind>
-		<keybind key="t">
-		  <action name="Execute">
-			<execute>xfce4-terminal</execute>
-		  </action>
-	   </keybind>
 	   <keybind key="s">
 		  <action name="Execute">
 			<execute>pavucontrol</execute>
