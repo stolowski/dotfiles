@@ -7,7 +7,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Terminal">
-    <action name="Execute"><execute>xfce4-terminal</execute></action>
+    <action name="Execute"><execute>x-terminal-emulator</execute></action>
   </item>
   <separator />
   <item label="Firefox">
@@ -58,7 +58,7 @@
   
   <menu id="python-menu" label="Python">
 	  <item label="Python Console">
-		  <action name="Execute"><execute>xfce4-terminal -e python</execute></action>
+		  <action name="Execute"><execute>x-terminal-emulator -e python</execute></action>
 	  </item>
 	  <item label="IDLE">
 		  <action name="Execute"><execute>idle</execute></action>
@@ -67,7 +67,7 @@
 		  <action name="Execute"><execute>dreampie</execute></action>
 	  </item>
 	  <item label="BPython">
-		  <action name="Execute"><execute>xfce4-terminal -e bpython</execute></action>
+		  <action name="Execute"><execute>x-terminal-emulator -e bpython</execute></action>
 	  </item>
   </menu>
   

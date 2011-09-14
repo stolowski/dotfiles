@@ -328,7 +328,7 @@
     </keybind>
     <keybind key="W-t">
         <action name="Execute">
-            <execute>xfce4-terminal</execute>
+            <execute>x-terminal-emulator</execute>
         </action>
     </keybind>
 	<keybind key="W-a"> <!-- prefix key for running aps -->
