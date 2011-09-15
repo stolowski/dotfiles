@@ -786,6 +786,17 @@
 		<decor>no</decor>
 	</application>
 
+	<application name="rdesktop*" class="rdesktop">
+		<focus>yes</focus>
+        <decor>no</decor>
+        <position force="yes">
+            <x>0</x>
+            <y>0</y>
+            <monitor>2</monitor>
+        </position>
+        <skip_taskbar>yes</skip_taskbar>
+    </application>
+
 	<application name="xfce4-terminal" class="Xfce4-terminal">
 		<maximized>true</maximized>
 		<focus>yes</focus>
