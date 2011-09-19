@@ -339,7 +339,7 @@
 	  </keybind>
 		<keybind key="q">
 		  <action name="Execute">
-			<execute>firefox</execute>
+			<execute>x-www-browser</execute>
 		  </action>
 	  </keybind>
   </keybind>

@@ -10,13 +10,10 @@
     <action name="Execute"><execute>x-terminal-emulator</execute></action>
   </item>
   <separator />
-  <item label="Firefox">
-    <action name="Execute"><execute>firefox</execute></action>
+  <item label="Web Browser">
+    <action name="Execute"><execute>x-www-browser</execute></action>
   </item>
-  <item label="Chrome">
-    <action name="Execute"><execute>google-chrome</execute></action>
-  </item>
-  <item label="File manager">
+  <item label="File Manager">
     <action name="Execute"><execute>thunar</execute></action>
   </item>
   <item label="Vim">
