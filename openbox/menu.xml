@@ -16,6 +16,9 @@
   <item label="File Manager">
     <action name="Execute"><execute>thunar</execute></action>
   </item>
+  <item label="Emacs">
+    <action name="Execute"><execute>emacs --maximized</execute></action>
+  </item>
   <item label="Vim">
     <action name="Execute"><execute>gvim</execute></action>
   </item>
@@ -110,9 +113,11 @@
   </menu>
 
  <separator />
-  <item label="Exit">
+ <menu id="logout-menu" label="Exit">
+  <item label="Logout">
     <action name="Exit" />
   </item>
+ </menu>
 </menu>
 
 </openbox_menu>
