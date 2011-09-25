@@ -1,9 +1,19 @@
-;;(setq load-path (cons "~/.emacs.d/" "~/.emacs.d/icicles" load-path ))
-(setq load-path (append (list nil "~/.emacs.d/" "~/.emacs.d/icicles" ) load-path ))
-
 (setq inhibit-startup-screen t)
 
+;;====================================================================================================
+;; Load modules
+;;====================================================================================================
+(setq load-path (append (list nil "~/.emacs.d/") load-path ))
 (require 'color-theme)
+(require 'linum)
+(require 'ibuffer)
+(require 'whitespace)
+(require 'personal)
+(require 'find-file)
+(require 'speedbar)
+(require 'org)
+;;====================================================================================================
+
 (color-theme-initialize)
 (color-theme-pierson)
 
@@ -18,9 +28,6 @@
 (setq history-length 250)
 ;;(add-to-list 'desktop-globals-to-save 'file-name-history)
 
-;; standardowe klawisze kopiowania i wklejania
-;(cua-mode)
-
 ;; podswietlanie aktualnej linii
 (global-hl-line-mode)
 
@@ -29,7 +36,15 @@
 
 (line-number-mode 1)
 (column-number-mode 1)
-(require 'linum)
+
+;;
+;; numerowanie linii w wybranych trybach
+(add-hook 'c-mode-common-hook 'linum-mode)
+(add-hook 'haskell-mode-hook 'linum-mode)
+
+;;
+;; wlaczenie trybu hide-show
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
 
 ;; dopasowywanie nazw buforow
 (ido-mode t)
@@ -40,22 +55,11 @@
 
 ;;(define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
 (setq-default indent-tabs-mode nil)
-;;(setq tab-stop-list '(5 9 13 17 21 25 29 33 37 41 45 49 53 57 61 65 69 73 77 81 85 89 93))
 ;;(setq c-basic-offset 4)
-
-;;(require 'auto-complete)
-;;(global-auto-complete-mode t)
-
-(require 'buff-menu+)
-
-(require 'whitespace)
-;;(whitespace-global-mode)
-
-(require 'personal)
-
+ 
+;;
+;; font settings
 (set-default-font "Droid Sans Mono 11")
-;; domyslna czcionka dla wszystkich okien
-;;(add-to-list 'default-frame-alist '(font . "9x15"))
 (add-to-list 'default-frame-alist '(font . "Droid Sans Mono 11"))
 
 (setq c-default-style "stroustrup")
@@ -63,7 +67,6 @@
 (setq auto-mode-alist (append '(("\\.tcc$" . c++-mode)) auto-mode-alist))
 
 ;; zachowanie funkcji otwierania alternatywnego pliku
-(require 'find-file)
 (setq cc-other-file-alist (append '((".tcc")) cc-other-file-alist )) ;;dziala?
 (setq ff-always-try-to-create nil)
 ;;(setq ff-always-try-to-create (append (list "./*/src" "./*/*/src" ) ff-search-directories))
@@ -72,26 +75,26 @@
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;; speedbar
-;;(when window-system  ; start speedbar if we're using a window system
-;;  (speedbar t))
-(require 'speedbar)
 (setq speedbar-use-images nil)
 (speedbar-add-supported-extension ".tcc")
+(speedbar-add-supported-extension ".hs")
 (add-to-list 'speedbar-fetch-etags-parse-list '("\\.tcc" . speedbar-parse-c-or-c++tag))
-
-(require 'org)
-
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/snippets")
 
 (setq Man-switches "-a")
 
+;;
+;; dodanie indeksu imenu dla plikow wybranych trybow
+(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+(add-hook 'c-mode-common-hook 'imenu-add-menubar-index)
+
+;;
+;; C-n i C-p w trybie occur przechoda pomiedzy dopasowaniami
+(add-hook 'occur-mode-hook 'next-error-follow-minor-mode)
 ;;====================================================================================================
 ;; skroty klawiszowe
 (global-set-key [f1] 'manual-entry)
 (setq Man-notify-method 'newframe)
-(global-set-key [f3] 'buffer-menu)
+(global-set-key [f3] 'ibuffer)
 (global-set-key [f5] 'previous-error)
 (global-set-key [f6] 'next-error)
 (global-set-key [f9] 'compile)
@@ -118,4 +121,3 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
-
