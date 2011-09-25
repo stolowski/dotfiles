@@ -785,12 +785,6 @@
 		<focus>yes</focus>
 		<decor>no</decor>
 	</application>
-
-	<application name="emacs" class="Emacs" type="normal">
-                <focus>yes</focus>
-		<decor>no</decor>
-	</application>
-
 	<application name="rdesktop*" class="rdesktop">
 		<focus>yes</focus>
         <decor>no</decor>
