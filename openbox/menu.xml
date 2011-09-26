@@ -53,9 +53,18 @@
 		  <action name="Execute"><execute>subdownloader</execute></action>
 	  </item>
   </menu>
- 
-  <separator />
   
+  <menu id="tools" label="Tools">
+    <item label="Truecrypt">
+      <action name="Execute"><execute>truecrypt</execute></action>
+    </item>
+    <item label="KeePassX">
+      <action name="Execute"><execute>keepassx</execute></action>
+    </item>
+  </menu>
+
+  <separator />
+
   <menu id="python-menu" label="Python">
 	  <item label="Python Console">
 		  <action name="Execute"><execute>x-terminal-emulator -e python</execute></action>
