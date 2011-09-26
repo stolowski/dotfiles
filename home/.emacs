@@ -15,7 +15,7 @@
 (require 'org)
 ;;====================================================================================================
 
-;;(color-theme-pierson)
+(color-theme-initialize)
 (color-theme-dark-laptop)
 
 ;; wylaczenie toolbara i scrollbara
