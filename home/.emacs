@@ -11,16 +11,20 @@
 (require 'personal)
 (require 'find-file)
 (require 'speedbar)
+(require 'anything-config)
 (require 'org)
 ;;====================================================================================================
 
-(color-theme-initialize)
-(color-theme-pierson)
+;;(color-theme-pierson)
+(color-theme-dark-laptop)
 
 ;; wylaczenie toolbara i scrollbara
 (tool-bar-mode 0)
-(toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 (show-paren-mode t)
+
+;; track and maintain window layout changes
+(winner-mode)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -49,7 +53,6 @@
 ;; dopasowywanie nazw buforow
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-
 ;; pokazywanie nazwy aktualnej metody/funkcji
 (which-function-mode t)
 
@@ -87,15 +90,15 @@
 (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 (add-hook 'c-mode-common-hook 'imenu-add-menubar-index)
 
-;;
 ;; C-n i C-p w trybie occur przechoda pomiedzy dopasowaniami
 (add-hook 'occur-mode-hook 'next-error-follow-minor-mode)
+
 ;;====================================================================================================
 ;; skroty klawiszowe
 (global-set-key [f1] 'manual-entry)
 (setq Man-notify-method 'newframe)
 (global-set-key [f3] 'ibuffer)
-(global-set-key [f4] 'list-bookmarks)
+(global-set-key [f4] 'anything)
 (global-set-key [f5] 'previous-error)
 (global-set-key [f6] 'next-error)
 (global-set-key [f9] 'compile)
@@ -105,18 +108,16 @@
 (global-set-key "\C-xa" 'ff-find-other-file)
 (global-set-key "\C-xF" 'ack-grep)
 (global-set-key "\C-x>" 'sql-send-region)
-(global-set-key "\C-x;" 'sql-send-paragraph)
+(global-set-key "\C-x;" 'comment-or-uncomment-region)
 (global-set-key [(control .)] 'complete-tag)
 (global-set-key [(control tab)] 'other-frame)
 (global-set-key [(backtab)] 'other-window)
 (global-set-key "\M-g" 'goto-line)
 (global-set-key [(control \`)] 'hippie-expand)
-(global-set-key [(control \;)] 'copy-above-char)
-(global-set-key "\C-xb" 'bookmark-set)
+(global-set-key [(control \')] 'copy-above-char)
 (global-set-key "\C-xj" 'jump-to-register)
 (global-set-key "\C-xm" 'point-to-register)
 (windmove-default-keybindings)
-
 (defalias 'lml 'list-matching-lines)
 (defalias 'hr 'highlight-regexp)
 
