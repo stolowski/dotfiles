@@ -19,6 +19,7 @@
 (color-theme-dark-laptop)
 
 ;; wylaczenie toolbara i scrollbara
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode -1)
 (show-paren-mode t)
@@ -90,8 +91,9 @@
 (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 (add-hook 'c-mode-common-hook 'imenu-add-menubar-index)
 
-;; C-n i C-p w trybie occur przechoda pomiedzy dopasowaniami
+;; show code when browsing occurences in grep/occur modes
 (add-hook 'occur-mode-hook 'next-error-follow-minor-mode)
+(add-hook 'grep-mode-hook 'next-error-follow-minor-mode)
 
 ;;====================================================================================================
 ;; skroty klawiszowe
