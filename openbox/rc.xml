@@ -793,7 +793,7 @@
             <y>0</y>
             <monitor>2</monitor>
         </position>
-        <skip_taskbar>yes</skip_taskbar>
+        <skip_taskbar>no</skip_taskbar>
     </application>
 
 	<application name="xfce4-terminal" class="Xfce4-terminal">
