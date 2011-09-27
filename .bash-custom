@@ -29,5 +29,6 @@ then
 fi
 PS1="$XTERM_TITLE"'\[\e[1;32m\][\w$(git_branch_d)]\$\[\e[0m\] '
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=emacsclient
+export VISUAL=emacsclient
+export ALTERNATE_EDITOR=emacs
