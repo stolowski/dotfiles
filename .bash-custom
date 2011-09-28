@@ -20,7 +20,7 @@ function cl {
 }
 
 shopt -s cdspell dirspell
-set -o vi
+set -o emacs
 set completion-ignore-case on
 
 if [ "$TERM" == "xterm" ]
