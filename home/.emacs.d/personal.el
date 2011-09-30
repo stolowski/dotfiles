@@ -1,3 +1,23 @@
+(defun grep-for-word-under-cursor(word path)
+  "Search recursively for WORD under the cursor using ack-grep, starting at PATH"
+  (interactive (list 
+                (read-from-minibuffer "Pattern: " (word-at-point))
+                (read-from-minibuffer "Path: " (file-name-directory (buffer-file-name)))
+                ))
+  (ack-grep word path)
+  )
+
+(defun occur-for-word-under-cursor(word)
+  "Find all occurrences of WORD under cursor in current buffer, or all buffers if called with prefix argument"
+  (interactive (list (read-from-minibuffer "Pattern: " (word-at-point))))
+  (if current-prefix-arg
+       (multi-occur-in-matching-buffers ".*" word)
+       (occur word)
+       )
+  (occur-rename-buffer t)
+  )
+
+
 (defun get-above-char()
   "Get character from a line above"
   (let (
@@ -28,7 +48,7 @@
   (let (
         (name)
         )
-    (setq name (generate-new-buffer-name "* ack-grep"))
+    (setq name (generate-new-buffer-name (concat "* ack-grep: " pattern)))
     (save-excursion
       (switch-to-buffer name)
       (shell-command (concat "ack-grep " pattern " " path) name nil)
