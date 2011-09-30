@@ -109,6 +109,7 @@
 (global-set-key "\C-xg" 'header-guard-insert-default)
 (global-set-key "\C-xa" 'ff-find-other-file)
 (global-set-key "\C-xF" 'ack-grep)
+(global-set-key "\C-x_" 'grep-for-word-under-cursor)
 (global-set-key "\C-x>" 'sql-send-region)
 (global-set-key "\C-x;" 'comment-or-uncomment-region)
 (global-set-key [(control .)] 'complete-tag)
