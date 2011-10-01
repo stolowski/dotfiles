@@ -812,5 +812,11 @@
 		<decor>no</decor>
 	</application>
 
+	<application name="x-www-browser" type="normal" role="browser">
+		<maximized>true</maximized>
+		<focus>yes</focus>
+		<decor>no</decor>
+	</application>
+
   </applications>
 </openbox_config>
