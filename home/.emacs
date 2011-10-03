@@ -13,6 +13,7 @@
 (require 'speedbar)
 (require 'anything-config)
 (require 'org)
+(require 'scf-mode)
 ;;====================================================================================================
 
 (color-theme-initialize)
@@ -94,6 +95,8 @@
 ;; show code when browsing occurences in grep/occur modes
 (add-hook 'occur-mode-hook 'next-error-follow-minor-mode)
 (add-hook 'grep-mode-hook 'next-error-follow-minor-mode)
+
+(add-hook 'grep-mode-hook (lambda () (scf-mode 1)))
 
 ;;====================================================================================================
 ;; skroty klawiszowe
