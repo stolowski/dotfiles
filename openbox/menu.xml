@@ -13,6 +13,9 @@
   <item label="Web Browser">
     <action name="Execute"><execute>x-www-browser</execute></action>
   </item>
+  <item label="Email">
+	  <action name="Execute"><execute>claws-mail</execute></action>
+  </item>
   <item label="File Manager">
     <action name="Execute"><execute>thunar</execute></action>
   </item>
@@ -32,6 +35,21 @@
   </item>
 
   <separator />
+  <menu id="devel-menu" label="Programming">
+    <item label="Qt Assistant">
+      <action name="Execute"><execute>assistant-qt4</execute></action>
+    </item>
+    <item label="Qt Designer">
+      <action name="Execute"><execute>designer-qt4</execute></action>
+    </item>
+    <item label="Python Console">
+      <action name="Execute"><execute>x-terminal-emulator -e python</execute></action>
+    </item>
+    <item label="IDLE">
+      <action name="Execute"><execute>idle</execute></action>
+    </item>
+  </menu>
+
   <menu id="mmedia-menu" label="Multimedia">
 	  <item label="Volume control">
 		  <action name="Execute"><execute>pavucontrol</execute></action>
@@ -63,23 +81,6 @@
     </item>
   </menu>
 
-  <separator />
-
-  <menu id="python-menu" label="Python">
-	  <item label="Python Console">
-		  <action name="Execute"><execute>x-terminal-emulator -e python</execute></action>
-	  </item>
-	  <item label="IDLE">
-		  <action name="Execute"><execute>idle</execute></action>
-	  </item>
-	  <item label="DreamPie">
-		  <action name="Execute"><execute>dreampie</execute></action>
-	  </item>
-	  <item label="BPython">
-		  <action name="Execute"><execute>x-terminal-emulator -e bpython</execute></action>
-	  </item>
-  </menu>
-  
   <separator />
 
   <menu id="config" label="Config">
