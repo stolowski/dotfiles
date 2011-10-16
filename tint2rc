@@ -32,7 +32,7 @@ font_shadow = 0
 panel_background_id = 1
 wm_menu = 1
 panel_dock = 0
-panel_layer = bottom
+panel_layer = top
 
 #---------------------------------------------
 # TASKBAR
@@ -96,8 +96,8 @@ clock_tooltip = %A %d %B
 #---------------------------------------------
 # BATTERY
 #---------------------------------------------
-battery = 0
-battery_hide = 98
+battery = 1
+battery_hide = 90
 battery_low_status = 10
 battery_low_cmd = notify-send "battery low"
 bat1_font = sans 7
