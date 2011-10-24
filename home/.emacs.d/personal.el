@@ -51,7 +51,7 @@
     (setq name (generate-new-buffer-name (concat "* ack-grep: " pattern)))
     (save-excursion
       (switch-to-buffer name)
-      (shell-command (concat "ack-grep " pattern " " path) name nil)
+      (shell-command (concat "ack-grep -i " pattern " " path) name nil)
       (goto-char (point-min))
       (insert (concat "-*- mode: grep; default-directory: \"" path "\" -*-"))
       (newline)
