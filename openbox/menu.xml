@@ -36,6 +36,9 @@
 
   <separator />
   <menu id="devel-menu" label="Programming">
+    <item label="Calculator">
+      <action name="Execute"><execute>speedcrunch</execute></action>
+    </item>
     <item label="Qt Assistant">
       <action name="Execute"><execute>assistant-qt4</execute></action>
     </item>
