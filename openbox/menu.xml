@@ -7,11 +7,11 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Terminal">
-    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+    <action name="Execute"><execute>terminal</execute></action>
   </item>
   <separator />
   <item label="Web Browser">
-    <action name="Execute"><execute>x-www-browser</execute></action>
+    <action name="Execute"><execute>chromium</execute></action>
   </item>
   <item label="Email">
 	  <action name="Execute"><execute>claws-mail</execute></action>
