@@ -794,6 +794,12 @@
 		<decor>no</decor>
 	</application>
 
+	<application name="terminal" class="Terminal">
+		<maximized>true</maximized>
+		<focus>yes</focus>
+		<decor>no</decor>
+	</application>
+
 	<application name="firefox.*" class="Firefox.*" type="normal" role="browser">
 		<maximized>true</maximized>
 		<focus>yes</focus>
