@@ -99,7 +99,7 @@ let VCSCommandMapPrefix='<Leader>v'
 
 "
 " use ack-grep for grep command
-set grepprg=ack-grep\ --cpp\ --cc\ --perl\ --python\ --ruby\ --js\ --make 
+set grepprg=ack-grep\ --cpp\ --cc\ --perl\ --python\ --ruby\ --js\ --vala\ --make 
 "
 " grep word under cursor
 nmap _g :grep <C-R>=expand("<cword>")<CR><CR>
