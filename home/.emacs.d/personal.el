@@ -1,7 +1,7 @@
 (defun grep-for-word-under-cursor(word path)
   "Search recursively for WORD under the cursor using ack-grep, starting at PATH"
   (interactive (list 
-                (read-from-minibuffer "Pattern: " (word-at-point))
+                (read-from-minibuffer "Pattern: " (current-word))
                 (read-from-minibuffer "Path: " (file-name-directory (buffer-file-name)))
                 ))
   (ack-grep word path)
@@ -9,7 +9,7 @@
 
 (defun occur-for-word-under-cursor(word)
   "Find all occurrences of WORD under cursor in current buffer, or all buffers if called with prefix argument"
-  (interactive (list (read-from-minibuffer "Pattern: " (word-at-point))))
+  (interactive (list (read-from-minibuffer "Pattern: " (current-word))))
   (if current-prefix-arg
        (multi-occur-in-matching-buffers ".*" word)
        (occur word)
@@ -119,7 +119,7 @@
 (defun header-guard-insert-default()
   "Add C/C++ header guard using current buffer name and ACC prefix"
   (interactive)
-  (header-guard-insert (buffer-name) "ACC" )
+  (header-guard-insert (buffer-name) "" )
   )
 
 (defun filter-buffer(command)
@@ -159,5 +159,30 @@
 ;  (interactive)
 ;  (filter-buffer (concat '"~/.emacs.d/external/hdr_guard.py " buffer-file-name))
 ;)
+
+(setq find-extensions '("*"))
+(make-variable-buffer-local 'find-extensions)
+
+(defun grep-by-extension(path expr)
+  (interactive (list 
+                (read-from-minibuffer "Path: " (file-name-directory (buffer-file-name)))
+                (read-from-minibuffer "Pattern: " (current-word)))
+               )
+  (setq exts find-extensions)
+  (find-grep (concat "find " path " -type f" 
+                 (let (value)
+                   (while exts
+                     (setq value (concat value " -name '" (car exts) "'"))
+                     (setq exts (cdr exts))
+                     (if exts
+                         (setq value (concat value " -or"))
+                       )
+                     )
+                   value
+                   )
+                 " -exec grep -nH -e " expr " {} +"
+                 )
+         )
+  )
 
 (provide 'personal)
