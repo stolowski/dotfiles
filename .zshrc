@@ -55,6 +55,11 @@ fi
 #PS1="%B$NAME:%{$fg[green]%}%d%%%{$reset_color%}%b "
 PS1="%B$NAME:%F{green}%d%%%{$reset_color%}%b%F{white} "
 
+################## TERMINAL TITLE #################
+set_title() { printf "\e]0;$@\a" }
+dir_in_title() { set_title $PWD }
+chpwd_functions=(dir_in_title)
+
 #autoload -U promptinit
 #promptinit
 #prompt adam2
