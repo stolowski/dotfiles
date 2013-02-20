@@ -3,7 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=6000
 SAVEHIST=6000
 DIRSTACKSIZE=16
-setopt autocd extendedglob autopushd pushd_ignore_dups auto_menu auto_list prompt_subst hist_ignore_all_dups
+setopt autocd extendedglob autopushd pushd_ignore_dups auto_menu auto_list prompt_subst hist_ignore_all_dups correct correctall
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
