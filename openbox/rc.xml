@@ -28,11 +28,11 @@
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Active</monitor>
+    <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is -->
-    <primaryMonitor>1</primaryMonitor>
+    <primaryMonitor>Mouse</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
@@ -41,7 +41,7 @@
   </placement>
   <theme>
     <name>Onyx-black</name>
-    <titleLayout>NLIMC</titleLayout>
+    <titleLayout>NLIMDC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -100,6 +100,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
+
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
        during a session
@@ -109,16 +110,19 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>Desktop 1</name>
       <name>Desktop 2</name>
+      <name>Desktop 3</name>
+      <name>Desktop 4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
+
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Nonpixel</popupShow>
@@ -165,6 +169,37 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+   
+    <!-- Tiling-like keybindings -->
+    <keybind key="W-C-Right">
+      <action name="GrowToEdge">
+        <direction>east</direction>
+        <dialog>no</dialog>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+      <keybind key="W-C-Left">
+      <action name="GrowToEdge">
+        <direction>west</direction>
+        <dialog>no</dialog>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+      <keybind key="W-C-Up">
+      <action name="GrowToEdge">
+        <direction>north</direction>
+        <dialog>no</dialog>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+      <keybind key="W-C-Down">
+      <action name="GrowToEdge">
+        <direction>south</direction>
+        <dialog>no</dialog>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="DesktopLeft">
@@ -202,43 +237,54 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="C-S-A-Left">
       <action name="SendToDesktopLeft">
         <dialog>no</dialog>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="C-S-A-Right">
       <action name="SendToDesktopRight">
         <dialog>no</dialog>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
+    <keybind key="C-S-A-Up">
       <action name="SendToDesktopUp">
         <dialog>no</dialog>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Down">
+    <keybind key="C-S-A-Down">
       <action name="SendToDesktopDown">
         <dialog>no</dialog>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="Desktop">
         <desktop>1</desktop>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="Desktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-       <keybind key="W-d">
+    <keybind key="W-3">
+      <action name="Desktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="Desktop">
+        <desktop>4</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
       <action name="Close"/>
@@ -262,6 +308,14 @@
     <keybind key="W-f">
       <action name="ToggleMaximizeFull"/>
     </keybind>
+    <keybind key="W-A-v">
+      <action name="ToggleMaximize"/>
+      <direction>vertical</direction>
+    </keybind>
+    <keybind key="W-A-h">
+      <action name="ToggleMaximize"/>
+      <direction>horizontal</direction>
+    </keybind>
     <keybind key="W-m">
       <action name="Iconify"/>
     </keybind>
@@ -275,22 +329,28 @@
         <execute>gnome-screenshot -w</execute>
       </action>
     </keybind>
-    <keybind key="W-A-space">
+    <keybind key="W-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="W-space">
+    <keybind key="W-A-space">
       <action name="ShowMenu">
         <menu>client-list-combined-menu</menu>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
-      <action name="NextWindow"/>
+      <action name="NextWindow">
+        <dialog>icons</dialog>
+        <allDesktops>yes</allDesktops>
+      </action>
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow"/>
+      <action name="PreviousWindow">
+        <dialog>icons</dialog>
+        <allDesktops>yes</allDesktops>
+      </action>
     </keybind>
     <keybind key="C-A-Tab">
       <action name="NextWindow">
@@ -311,12 +371,12 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
         <action name="Execute">
-            <execute>thunar</execute>
+            <execute>nautilus</execute>
         </action>
     </keybind>
     <keybind key="W-t">
         <action name="Execute">
-            <execute>terminal</execute>
+            <execute>xfce4-terminal -e byobu</execute>
         </action>
     </keybind>
 	<keybind key="W-a"> <!-- prefix key for running aps -->
@@ -327,7 +387,7 @@
 	  </keybind>
 		<keybind key="q">
 		  <action name="Execute">
-			<execute>x-www-browser</execute>
+			<execute>firefox</execute>
 		  </action>
 	  </keybind>
   </keybind>
@@ -337,6 +397,11 @@
       </action>
     </keybind>
     <keybind key="A-F2">
+      <action name="Execute">
+        <execute>dmenu_run</execute>
+      </action>
+    </keybind>
+    <keybind key="A-F3">
       <action name="Execute">
         <execute>gmrun</execute>
       </action>
@@ -768,11 +833,6 @@
 
   # end of the example
 -->
-	<application name="evince" class="Evince">
-		<maximized>true</maximized>
-		<focus>yes</focus>
-		<decor>no</decor>
-	</application>
 	<application name="rdesktop*" class="rdesktop">
           <focus>yes</focus>
           <decor>no</decor>

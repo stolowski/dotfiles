@@ -6,31 +6,30 @@
                 file:///usr/share/openbox/menu.xsd">
 
 <menu id="root-menu" label="Openbox 3">
-  <item label="Terminal">
-    <action name="Execute"><execute>terminal</execute></action>
+  <item label="Terminal" icon="/usr/share/app-install/icons/gnome-terminal.png">
+    <action name="Execute"><execute>xfce4-terminal -e byobu</execute></action>
   </item>
   <separator />
-  <item label="Web Browser">
-    <action name="Execute"><execute>chromium</execute></action>
+  <item label="Web Browser" icon="/usr/share/pixmaps/firefox.png">
+    <action name="Execute"><execute>firefox</execute></action>
   </item>
-  <item label="Email">
-	  <action name="Execute"><execute>claws-mail</execute></action>
+  <item label="Email" icon="/usr/share/pixmaps/thunderbird.png">
+	  <action name="Execute"><execute>thunderbird</execute></action>
   </item>
-  <item label="File Manager">
-    <action name="Execute"><execute>thunar</execute></action>
+  <item label="File Manager" icon="/usr/share/icons/hicolor/16x16/apps/nautilus.png">
+    <action name="Execute"><execute>nautilus</execute></action>
   </item>
-  <item label="Emacs">
-    <action name="Execute"><execute>emacs --maximized</execute></action>
+  <item label="Emacs" icon="/usr/local/share/emacs/24.1/etc/images/icons/hicolor/24x24/apps/emacs.png">
+    <action name="Execute"><execute>emacs</execute></action>
   </item>
-  <item label="Vim">
+  <item label="Vim" icon="/usr/share/app-install/icons/vim.png">
     <action name="Execute"><execute>gvim</execute></action>
   </item>
-	
   <item label="Leafpad">
     <action name="Execute"><execute>leafpad</execute></action>
   </item>
  
-  <item label="Skype">
+  <item label="Skype" icon="/usr/share/pixmaps/skype.png">
     <action name="Execute"><execute>skype</execute></action>
   </item>
 
@@ -45,6 +44,9 @@
     <item label="Qt Designer">
       <action name="Execute"><execute>designer-qt4</execute></action>
     </item>
+    <item label="DevHelp">
+      <action name="Execute"><execute>devhelp</execute></action>
+    </item>
     <item label="Python Console">
       <action name="Execute"><execute>x-terminal-emulator -e python</execute></action>
     </item>
@@ -58,6 +60,9 @@
 		  <action name="Execute"><execute>pavucontrol</execute></action>
 	  </item>
 	  <separator />
+	  <item label="Clementine">
+		  <action name="Execute"><execute>clementine</execute></action>
+	  </item>
 	  <item label="Deadbeef">
 		  <action name="Execute"><execute>deadbeef</execute></action>
 	  </item>

@@ -42,7 +42,7 @@ hi CursorLine ctermbg=darkgrey ctermfg=white guibg=grey37 guifg=white
 
 set guifont=Droid\ Sans\ Mono\ 10
 " :set cursorline
-set tags=tags
+set tags=./tags,tags
 let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '^\.', '^moc_', '^CMakeFiles$', '^CMakeCache.txt$']
 let NERDTreeWinPos="right"
 
@@ -102,8 +102,16 @@ let VCSCommandMapPrefix='<Leader>v'
 set grepprg=ack-grep\ --cpp\ --cc\ --perl\ --python\ --ruby\ --js\ --vala\ --make 
 "
 " grep word under cursor
-nmap _g :grep <C-R>=expand("<cword>")<CR><CR>
-nmap _a :grepadd <C-R>=expand("<cword>")<CR><CR>
+"nmap _g :grep <C-R>=expand("<cword>")<CR><CR>
+"nmap _a :grepadd <C-R>=expand("<cword>")<CR><CR>
+
+map gr :grep <cword> *<CR>
+map Gr :grep <cword> %:p:h/*<CR>
+map gR :grep '\b<cword>\b' *<CR>
+map GR :grep '\b<cword>\b' %:p:h/*<CR>
+map _g :grep -r '\b<cword>\b' %:p:h/*.%:e<CR>
+map _a :grepadd -r '\b<cword>\b' %:p:h/*.%:e<CR>
+map cd :cd %:p:h<CR>
 
 "
 " moje menu
