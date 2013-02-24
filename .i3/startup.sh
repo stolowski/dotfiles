@@ -8,3 +8,7 @@ parcellite &
 ubuntuone-launch &
 xscreensaver -no-capture-stderr -no-splash &
 thunar --daemon &
+
+syndaemon -R -i 1 -d
+unclutter &
+
