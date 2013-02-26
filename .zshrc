@@ -32,7 +32,8 @@ alias u="cd ~/src/ubuntu"
 alias bl="bzr log -l1"
 alias bll="bzr log -l5"
 alias bq="bzr qlog"
-alias bd="bzr qdiff"
+alias bd="bzr diff"
+alias bqd="bzr qdiff"
 alias m="make"
 alias m2="make -j2"
 alias m3="make -j3"
@@ -45,15 +46,17 @@ alias lxc-ips="awk '{print \$3, \$4}' /var/lib/misc/dnsmasq.leases"
 autoload -U colors && colors
 
 ################## PROMPT #########################
+_NAME="%m"
 if [ -e /etc/debian_chroot ]; then
-    NAME="%{%F{red}%}"$(cat /etc/debian_chroot)
+    _NAME="%{%F{red}%}"$(cat /etc/debian_chroot)
 elif grep -q "# UNCONFIGURED" /etc/fstab; then   ### this is the case for lxc containers
-    NAME="%{%F{yellow}%}%m"
-else
-    NAME="%m"
+    _NAME="%{%F{yellow}%}%m"
 fi
 
-PROMPT="%{%F{red}%}[%T]$reset_color %B$NAME:%{%F{green}%}%d%#%{$reset_color%}%b%{%F{white}%} "
+_TIME="%{%F{red}%}[%T]$reset_color"
+_DIR="%{%F{green}%}%d%#%{$reset_color%}%"
+PROMPT="$_TIME %B$_NAME:$_DIR %b%{%F{white}%} "
+unset _TIME _NAME _DIR
 
 ################## TERMINAL TITLE #################
 set_title() { printf "\e]0;$@\a" }
