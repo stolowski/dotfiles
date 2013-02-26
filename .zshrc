@@ -46,14 +46,14 @@ autoload -U colors && colors
 
 ################## PROMPT #########################
 if [ -e /etc/debian_chroot ]; then
-    NAME=$fg[red]$(cat /etc/debian_chroot)
+    NAME="%{%F{red}%}"$(cat /etc/debian_chroot)
 elif grep -q "# UNCONFIGURED" /etc/fstab; then   ### this is the case for lxc containers
-    NAME="%F{yellow}%m"
+    NAME="%{%F{yellow}%}%m"
 else
     NAME="%m"
 fi
-#PS1="%B$NAME:%{$fg[green]%}%d%%%{$reset_color%}%b "
-PS1="%B$NAME:%F{green}%d%%%{$reset_color%}%b%F{white} "
+
+PROMPT="%{%F{red}%}[%T]$reset_color %B$NAME:%{%F{green}%}%d%#%{$reset_color%}%b%{%F{white}%} "
 
 ################## TERMINAL TITLE #################
 set_title() { printf "\e]0;$@\a" }
